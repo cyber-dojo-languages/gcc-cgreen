@@ -1,4 +1,4 @@
-# gcc-green
+# gcc-cgreen
 
-![Build Status](https://travis-ci.org/cyber-dojo-languages/gcc-green.svg?branch=master)
+![Build Status](https://travis-ci.org/cyber-dojo-languages/gcc-cgreen.svg?branch=master)
 
