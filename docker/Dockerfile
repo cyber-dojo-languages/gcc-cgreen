@@ -1,13 +1,11 @@
 FROM  cyberdojofoundation/gcc:7.1
 LABEL maintainer=jon@jaggersoft.com
 
-RUN apt-get update
-RUN apt-get -y install wget
-RUN apt-get -y install unzip
-RUN apt-get -y install cmake
+RUN apt-get update \
+ && apt-get -y install wget unzip cmake
 
-RUN wget https://github.com/cgreen-devs/cgreen/archive/master.zip
-RUN unzip master.zip
+RUN wget https://github.com/cgreen-devs/cgreen/archive/master.zip \
+ && unzip master.zip
 
 RUN cd cgreen-master \
  && mkdir build \
