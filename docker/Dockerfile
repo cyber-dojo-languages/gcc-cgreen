@@ -1,17 +1,9 @@
-FROM  cyberdojofoundation/gcc:7.2
+FROM  cyberdojofoundation/gcc:7.3.0
 LABEL maintainer=jon@jaggersoft.com
 
-RUN apt-get update \
- && apt-get -y install wget unzip cmake
+ADD install.sh /
 
-RUN wget https://github.com/cgreen-devs/cgreen/archive/master.zip \
- && unzip master.zip
-
-RUN cd cgreen-master \
- && mkdir build \
- && cd build \
- && cmake .. \
- && make \
- && make install
+RUN /install.sh \
+  && rm -f /install.sh
 
 COPY red_amber_green.rb /usr/local/bin
