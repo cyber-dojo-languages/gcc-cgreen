@@ -1,4 +1,4 @@
-FROM  cyberdojofoundation/gcc:7.3.0
+FROM  cyberdojofoundation/gcc
 LABEL maintainer=jon@jaggersoft.com
 
 ADD install.sh /
