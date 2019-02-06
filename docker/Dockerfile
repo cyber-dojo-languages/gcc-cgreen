@@ -2,7 +2,10 @@ FROM cyberdojofoundation/gcc
 LABEL maintainer=jon@jaggersoft.com
 
 RUN apt-get update \
- && apt-get install --yes wget unzip cmake
+ && apt-get install --yes \
+ cmake \
+ unzip \
+ wget
 
 RUN wget https://github.com/cgreen-devs/cgreen/archive/master.zip
 RUN unzip master.zip
@@ -13,7 +16,7 @@ RUN cd build
 RUN cmake ..
 RUN make
 RUN make install
-RUN apt-get remove --yes wget cmake unzip
+RUN apt-get remove --yes cmake unzip wget
 
 #ADD install.sh /
 #RUN /install.sh && rm -f /install.sh
