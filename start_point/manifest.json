@@ -18,7 +18,5 @@
   "progress_regexs" : [
     "((\\d)+ tests)",
     "(\\d)+ failures[s]?, (\\d)+ exception[s]?"
-  ],
-
-  "runner_choice": "stateless"
+  ]
 }
