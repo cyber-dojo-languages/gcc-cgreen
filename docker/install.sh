@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 set -Eeu
 
+readonly CGREEN_VERSION=1.7.0
+
 apk add binutils-dev
 apk add cmake wget unzip
-wget https://github.com/cgreen-devs/cgreen/archive/refs/tags/1.6.3.zip
-unzip 1.6.3.zip
-cd cgreen-1.6.3
+wget "https://github.com/cgreen-devs/cgreen/archive/refs/tags/${CGREEN_VERSION}.zip"
+unzip "${CGREEN_VERSION}.zip"
+cd "cgreen-${CGREEN_VERSION}"
 
 make
 make install
 cd ..
 
-rm -rf cgreen-1.6.3
+rm -rf "cgreen-${CGREEN_VERSION}"
 apk del cmake wget unzip
